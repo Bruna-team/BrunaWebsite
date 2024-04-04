@@ -1,85 +1,77 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import { ref } from 'vue';
+const links = ref([
+  {
+    name: 'Inicio',
+    link: '/'
+  },
+  {
+    name: 'Nosotros',
+    link: '/nosotros'
+  },
+  {
+    name: 'Contacto',
+    link: '/contacto'
+  },
+  {
+    name: 'Soporte',
+    link: '/soporte'
+  },
+])
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+  <v-layout>
+    <v-app-bar
+      color="primario"
+      density="compact"
+    >
+      <template v-slot:prepend>
+        <img src="./assets/logo.svg"/>
+      </template>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+      <v-app-bar-title class="text-white">
+        <h1 class="text-h4 font-bruna">
+          Bruna
+        </h1>
+      </v-app-bar-title>
 
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
+      <template v-slot:append>
+        <v-row justify="center" no-gutters>
+          <template v-for="(link, l) in links" :key="l">
+            <RouterLink :to="link.link">
+              <v-btn
+                class="mx-2"
+                color="white"
+                rounded="xl"
+                variant="text"
+              >
+                {{ link.name }}
+              </v-btn>
+            </RouterLink>
+          </template>
+        </v-row>
+      </template>
+    </v-app-bar>
 
-  <RouterView />
+    <v-main>
+      <RouterView />
+      <v-footer color="secundario" class="justify-center">
+        <div>
+          <v-btn
+            class="mx-2"
+            color="white"
+            rounded="xl"
+            variant="text"
+            prepend-icon="mdi-"
+          >
+            Telegram
+          </v-btn>
+        </div>
+        <p class="text-center">
+          @Copyright BrunaTeam 2024
+        </p>
+      </v-footer>
+    </v-main>
+  </v-layout>
 </template>
-
-<style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
-}
-</style>

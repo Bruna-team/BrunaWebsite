@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Megrim&display=swap");
+
+/* estilos personalizados en la tipografía */
+a {
+  text-decoration: none;
+  color: initial;
+}
+.large-icon, .large-icon::before {
+  font-size: 10rem !important;
+}
+.letter-spacing {
+  letter-spacing: 1.4px !important;
+}
+.font-bruna {
+  font-family: 'Megrim', cursive !important;
+  font-weight: bold;
+  letter-spacing: .2rem;
+}
+.text-wrap {
+  white-space: break-spaces;
+  text-overflow: clip;
+  overflow: auto;
+}
+
+/* Iconos personalizados */
+i.logo::before {
+  display: block;
+  width: 100%;
+  content: url("logo.svg");
+}
+i.logo {
+  display: block;
+  position: absolute;
+  top: -2.3rem;
+  left: 10rem;
+}
+
+/* Clases del nav personalizadas*/
+.nav-link {
+  padding: 1.5rem 2rem;
+  font-size: 1.2rem;
+}
+
+/* Clases personalizadas rápidas */
+.items-end {
+  justify-items: end;
+}
