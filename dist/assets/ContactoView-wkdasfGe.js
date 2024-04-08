@@ -1,0 +1,1 @@
+import{_ as t}from"./_plugin-vue_export-helper-DlAUqK2U.js";import{o,c as n,F as s,f as e}from"./index-C22-QAi5.js";const c={},r=e("h2",{class:"text-center"},"Contáctenos y dinos tu interés",-1),a=e("div",null,[e("p",null,"form")],-1);function _(l,i){return o(),n(s,null,[r,a],64)}const m=t(c,[["render",_]]);export{m as default};

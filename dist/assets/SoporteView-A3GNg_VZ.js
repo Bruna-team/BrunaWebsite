@@ -1,0 +1,1 @@
+import{_ as o}from"./_plugin-vue_export-helper-DlAUqK2U.js";import{o as t,c,F as s,f as e}from"./index-C22-QAi5.js";const n={},r=e("h2",{class:"text-center"},"Brindamos soporte técnico",-1),a=e("div",null," Si presentas problemas con el software comunicate con: ",-1);function _(i,l){return t(),c(s,null,[r,a],64)}const p=o(n,[["render",_]]);export{p as default};
